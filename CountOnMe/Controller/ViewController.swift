@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     // Error check computed variables
     var expressionIsCorrect: Bool {
         return elements.last != "+" && elements.last != "-"
-    }
+    }// Rajouter / et x
     
     var expressionHaveEnoughElement: Bool {
         return elements.count >= 3
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     var canAddOperator: Bool {
         return elements.last != "+" && elements.last != "-"
-    }
+    }// Rajouter / et x
     
     var expressionHaveResult: Bool {
         return textView.text.firstIndex(of: "=") != nil
