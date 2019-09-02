@@ -11,6 +11,8 @@ import Foundation
 class StringFiles {
     var plus = "+"
     var minus = "-"
+    var multiplication = "x"
+    var division = "/"
     var equal = "="
     var zero = "Zero!"
     var ok = "Ok!"

@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var numberButtons: [UIButton]!
     @IBOutlet weak var textView: UITextView!
-        
+    var alert = AlertOperator()
     var str = StringFiles()
     
     var elements: [String] {
@@ -46,38 +46,56 @@ class ViewController: UIViewController {
         }
         textView.text.append(numberText)
     }
-    @IBAction func tappedAdditionButton(_ sender: UIButton) {
+    
+    // A refractoriser!!!!!
+    func alertOccupied() {
+        let alertVC = UIAlertController(title: str.zero, message: str.occuped, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
+        return self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func alertCorrect() {
+        let alertVC = UIAlertController(title: str.zero, message: str.correct, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
+        return self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func alertNew() {
+        let alertVC = UIAlertController(title: str.zero, message: str.new, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
+        return self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func tappedButton(_ sender: UIButton) {
         if canAddOperator {
-            textView.text.append(str.plus)
+            let operand = UIButton()
+            switch operand.tag {
+            case 1:
+                textView.text.append(" " + str.plus + " ")
+            case 2:
+                textView.text.append(" " + str.minus + " ")
+            case 3:
+                textView.text.append(" " + str.division + " ")
+            case 4:
+                textView.text.append(" " + str.multiplication + " ")
+            default:
+                break
+            }
         } else {
-            let alertVC = UIAlertController(title: str.zero, message: str.occuped, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
-            self.present(alertVC, animated: true, completion: nil)
+           alertOccupied()
         }
     }
-    @IBAction func tappedSubstractionButton(_ sender: UIButton) {
-        if canAddOperator {
-            textView.text.append(" - ")
-        } else {
-            let alertVC = UIAlertController(title: str.zero, message: str.occuped, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
-            self.present(alertVC, animated: true, completion: nil)
-        }
-    }
+   
+    
     @IBAction func tappedEqualButton(_ sender: UIButton) {
        guard expressionIsCorrect else {
-            let alertVC = UIAlertController(title: str.zero, message: str.correct, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
-            return self.present(alertVC, animated: true, completion: nil)
+           return alertCorrect()
         }
         guard expressionHaveEnoughElement else {
-            let alertVC = UIAlertController(title: str.zero, message: str.new, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
-            return self.present(alertVC, animated: true, completion: nil)
+           return alertNew()
         }
-       // operate.Operate()
     // Create local copy of operations
-        var operationsToReduce = elements
+    /*    var operationsToReduce = elements
         // Iterate over operations while an operand still here
         while operationsToReduce.count > 1 {
             let left = Int(operationsToReduce[0])!
@@ -94,6 +112,6 @@ class ViewController: UIViewController {
             operationsToReduce = Array(operationsToReduce.dropFirst(3))
             operationsToReduce.insert("\(result)", at: 0)
         }
-        textView.text.append(" = \(operationsToReduce.first!)")
+        textView.text.append(" = \(operationsToReduce.first!)") */
     }
 }

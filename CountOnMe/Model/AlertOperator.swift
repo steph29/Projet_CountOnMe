@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 class AlertOperator {
-   
+    var str = StringFiles()
+ 
 }

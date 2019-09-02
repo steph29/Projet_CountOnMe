@@ -191,7 +191,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="uyv-R9-ya7">
                                                         <rect key="frame" x="276" y="33.333333333333371" width="35" height="209"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVV-cL-aJA">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVV-cL-aJA">
                                                                 <rect key="frame" x="0.0" y="0.0" width="35" height="44"/>
                                                                 <color key="backgroundColor" red="0.46913260919999999" green="0.7149516575" blue="0.62407517239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -199,11 +199,11 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="tappedAdditionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="xmN-bG-DJG"/>
+                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="q6u-sv-b0V"/>
                                                                     <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="43g-3V-qQw"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-Fp-IAe">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-Fp-IAe">
                                                                 <rect key="frame" x="0.0" y="55" width="35" height="44"/>
                                                                 <color key="backgroundColor" red="0.87294975829999999" green="0.37112226879999999" blue="0.32504552809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -211,11 +211,11 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
+                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="8IO-L8-ElF"/>
                                                                     <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="9Gl-vW-nhJ"/>
-                                                                    <action selector="tappedSubstractionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="IPJ-nF-ul4"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-Wj-86Q">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-Wj-86Q">
                                                                 <rect key="frame" x="0.0" y="109.99999999999994" width="35" height="44"/>
                                                                 <color key="backgroundColor" red="1" green="0.72468355539999996" blue="0.56487245090000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -223,10 +223,11 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
+                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="cRW-mf-pl1"/>
                                                                     <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="opc-8q-TD3"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-xZ-Mj9">
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-xZ-Mj9">
                                                                 <rect key="frame" x="0.0" y="164.99999999999994" width="35" height="44"/>
                                                                 <color key="backgroundColor" red="0.98346543470000003" green="0.69204183959999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -234,6 +235,7 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
+                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="NbY-s1-Frx"/>
                                                                     <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="UaT-Gb-dzc"/>
                                                                 </connections>
                                                             </button>
