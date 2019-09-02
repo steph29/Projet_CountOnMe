@@ -9,12 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet var numberButtons: [UIButton]!
-    var str = StringFiles()
-    var alert = AlertOperator()
-    var operate = Operator()
     
+    @IBOutlet var numberButtons: [UIButton]!
+    @IBOutlet weak var textView: UITextView!
+        
+    var str = StringFiles()
     
     var elements: [String] {
         return textView.text.split(separator: " ").map { "\($0)" }
@@ -76,10 +75,8 @@ class ViewController: UIViewController {
             alertVC.addAction(UIAlertAction(title: str.ok, style: .cancel, handler: nil))
             return self.present(alertVC, animated: true, completion: nil)
         }
-        operate.Operate()
-    
-    /*
-        // Create local copy of operations
+       // operate.Operate()
+    // Create local copy of operations
         var operationsToReduce = elements
         // Iterate over operations while an operand still here
         while operationsToReduce.count > 1 {
@@ -97,6 +94,6 @@ class ViewController: UIViewController {
             operationsToReduce = Array(operationsToReduce.dropFirst(3))
             operationsToReduce.insert("\(result)", at: 0)
         }
-        textView.text.append(" = \(operationsToReduce.first!)")*/
+        textView.text.append(" = \(operationsToReduce.first!)")
     }
 }

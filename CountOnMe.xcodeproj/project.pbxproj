@@ -16,7 +16,7 @@
 		1FA43BF3224E569A00F565CB /* SimpleCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA43BF2224E569A00F565CB /* SimpleCalcUITests.swift */; };
 		B139151023131E9700B65367 /* StringFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B139150F23131E9600B65367 /* StringFiles.swift */; };
 		B139151223186EBD00B65367 /* AlertOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B139151123186EBD00B65367 /* AlertOperator.swift */; };
-		B1391514231AAAA300B65367 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1391513231AAAA300B65367 /* Elements.swift */; };
+		B1391516231D306900B65367 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1391515231D306900B65367 /* Expression.swift */; };
 		B151B516230D3BB100A777D2 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B515230D3BB100A777D2 /* Operator.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		1FA43BF4224E569A00F565CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B139150F23131E9600B65367 /* StringFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFiles.swift; sourceTree = "<group>"; };
 		B139151123186EBD00B65367 /* AlertOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOperator.swift; sourceTree = "<group>"; };
-		B1391513231AAAA300B65367 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		B1391515231D306900B65367 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
 		B151B515230D3BB100A777D2 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,8 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				B139151123186EBD00B65367 /* AlertOperator.swift */,
+				B1391515231D306900B65367 /* Expression.swift */,
 				B151B515230D3BB100A777D2 /* Operator.swift */,
-				B1391513231AAAA300B65367 /* Elements.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,10 +315,10 @@
 			files = (
 				1FA43BD5224E569900F565CB /* ViewController.swift in Sources */,
 				B151B516230D3BB100A777D2 /* Operator.swift in Sources */,
-				B1391514231AAAA300B65367 /* Elements.swift in Sources */,
 				B139151223186EBD00B65367 /* AlertOperator.swift in Sources */,
 				B139151023131E9700B65367 /* StringFiles.swift in Sources */,
 				1FA43BD3224E569900F565CB /* AppDelegate.swift in Sources */,
+				B1391516231D306900B65367 /* Expression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
