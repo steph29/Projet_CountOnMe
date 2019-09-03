@@ -11,26 +11,30 @@ import UIKit
 
 class Expression {
     var str = StringFiles()
-    
+    var textView = UITextView()
+    var elements: [String] {
+        return textView.text.split(separator: " ").map { "\($0)" }
+    }
     
     func equalButton(textView: UITextView) {
+    // Create local copy of operations
     var operationsToReduce = elements
     // Iterate over operations while an operand still here
     while operationsToReduce.count > 1 {
-    let left = Int(operationsToReduce[0])!
+    let left = Double(operationsToReduce[0])!
     let operand = operationsToReduce[1]
-    let right = Int(operationsToReduce[2])!
-    let result: Int
+    let right = Double(operationsToReduce[2])!
+    let result: Double
     switch operand {
-        case str.plus:
+    case str.plus:
             result = left + right
-        case str.minus:
+    case str.minus:
             result = left - right
-        case str.multiplication:
+    case str.multiplication:
             result = left * right
-        case str.division:
-            result - left / right
-        default: fatalError(str.unk)
+    case str.division:
+            result = left / right
+    default: fatalError(str.unk)
     }
     operationsToReduce = Array(operationsToReduce.dropFirst(3))
     operationsToReduce.insert("\(result)", at: 0)

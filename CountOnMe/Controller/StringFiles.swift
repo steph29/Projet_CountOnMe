@@ -20,4 +20,5 @@ class StringFiles {
     var new = "Démarrez un nouveau calcul"
     var correct = "Entrez une opération correcte"
     var unk = "Unknown operator"
+    var none = ""
 }
