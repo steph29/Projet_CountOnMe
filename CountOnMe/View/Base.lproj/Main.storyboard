@@ -97,7 +97,7 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="8Gn-GD-poa"/>
+                                                                    <action selector="acButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="Lsg-pX-QLo"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -283,8 +283,7 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="q6u-sv-b0V"/>
-                                                                    <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="43g-3V-qQw"/>
+                                                                    <action selector="tappedButtonAction:" destination="eqK-jh-KKu" eventType="touchUpInside" id="B6X-EL-zAN"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-Fp-IAe">
@@ -298,8 +297,7 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="8IO-L8-ElF"/>
-                                                                    <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="9Gl-vW-nhJ"/>
+                                                                    <action selector="tappedButtonAction:" destination="eqK-jh-KKu" eventType="touchUpInside" id="5Cd-Cg-Mqn"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-Wj-86Q">
@@ -313,8 +311,7 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="cRW-mf-pl1"/>
-                                                                    <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="opc-8q-TD3"/>
+                                                                    <action selector="tappedButtonAction:" destination="eqK-jh-KKu" eventType="touchUpInside" id="2al-Zs-u5K"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-xZ-Mj9">
@@ -328,8 +325,7 @@
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="tappedButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="NbY-s1-Frx"/>
-                                                                    <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="UaT-Gb-dzc"/>
+                                                                    <action selector="tappedButtonAction:" destination="eqK-jh-KKu" eventType="touchUpInside" id="dnH-TE-26L"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
