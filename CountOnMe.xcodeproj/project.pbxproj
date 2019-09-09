@@ -17,7 +17,6 @@
 		B139151023131E9700B65367 /* StringFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B139150F23131E9600B65367 /* StringFiles.swift */; };
 		B139151223186EBD00B65367 /* AlertOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B139151123186EBD00B65367 /* AlertOperator.swift */; };
 		B1391516231D306900B65367 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1391515231D306900B65367 /* Expression.swift */; };
-		B151B516230D3BB100A777D2 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B515230D3BB100A777D2 /* Operator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		B139150F23131E9600B65367 /* StringFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFiles.swift; sourceTree = "<group>"; };
 		B139151123186EBD00B65367 /* AlertOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOperator.swift; sourceTree = "<group>"; };
 		B1391515231D306900B65367 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
-		B151B515230D3BB100A777D2 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				B139151123186EBD00B65367 /* AlertOperator.swift */,
+				B139150F23131E9600B65367 /* StringFiles.swift */,
 				B1391515231D306900B65367 /* Expression.swift */,
-				B151B515230D3BB100A777D2 /* Operator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				1FA43BD4224E569900F565CB /* ViewController.swift */,
-				B139150F23131E9600B65367 /* StringFiles.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA43BD5224E569900F565CB /* ViewController.swift in Sources */,
-				B151B516230D3BB100A777D2 /* Operator.swift in Sources */,
 				B139151223186EBD00B65367 /* AlertOperator.swift in Sources */,
 				B139151023131E9700B65367 /* StringFiles.swift in Sources */,
 				1FA43BD3224E569900F565CB /* AppDelegate.swift in Sources */,

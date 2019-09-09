@@ -13,11 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet var numberButtons: [UIButton]!
     var str = StringFiles()
     var expression = Expression()
+    var alert = AlertOperator()
     
     var elements: [String] {
         return textView.text.split(separator: " ").map { "\($0)" }
     }
-    
     // Error check computed variables
     var expressionIsCorrect: Bool {
         return elements.last != str.plus && elements.last != str.minus && elements.last != str.division && elements.last != str.multiplication
@@ -95,19 +95,16 @@ class ViewController: UIViewController {
         guard expressionIsCorrect else {
             return alertMessage(title: str.zero, message: str.correct)
         }
-        
         guard expressionHaveEnoughElement else {
             return alertMessage(title: str.oups, message: str.new)
         }
         // Create local copy of operations
         var operationsToReduce = elements
-        
         // Iterate over operations while an operand still here
         while operationsToReduce.count > 1 {
             let left = Double(operationsToReduce[0])!
             let operand = operationsToReduce[1]
             let right = Double(operationsToReduce[2])!
-            
             let result: Double
             switch operand {
             case str.plus: result = left + right
@@ -116,15 +113,9 @@ class ViewController: UIViewController {
             case str.division: result = left / right
             default: fatalError(str.unk)
             }
-            
             operationsToReduce = Array(operationsToReduce.dropFirst(3))
             operationsToReduce.insert("\(result)", at: 0)
         }
-        
         textView.text.append(" = \(operationsToReduce.first!)")
-        
     }
-    
 }
-
-
