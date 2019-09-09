@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
     var str = StringFiles()
+    var expression = Expression()
     
     var elements: [String] {
         return textView.text.split(separator: " ").map { "\($0)" }
@@ -69,9 +70,9 @@ class ViewController: UIViewController {
             case 2:
                 textView.text.append(" " + str.minus + " ")
             case 3:
-                textView.text.append(" " + str.multiplication + " ")
-            case 4:
                 textView.text.append(" " + str.division + " ")
+            case 4:
+                textView.text.append(" " + str.multiplication + " ")
             default:
                 break
             }
@@ -98,7 +99,6 @@ class ViewController: UIViewController {
         guard expressionHaveEnoughElement else {
             return alertMessage(title: str.oups, message: str.new)
         }
-        
         // Create local copy of operations
         var operationsToReduce = elements
         
@@ -122,6 +122,7 @@ class ViewController: UIViewController {
         }
         
         textView.text.append(" = \(operationsToReduce.first!)")
+        
     }
     
 }
