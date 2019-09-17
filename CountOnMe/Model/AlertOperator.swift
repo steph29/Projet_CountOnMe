@@ -32,6 +32,12 @@ class AlertOperator {
     var expressionHaveResult: Bool {
         return textView.text.firstIndex(of: "=") != nil
     }
-   
-   
+    
+    init(){
+        NotificationCenter.default.addObserver(self, selector: #selector(calculate), name: NSNotification.Name("viewLoaded"), object: nil)
+    }
+    
+    @objc private func calculate(){
+        print("La notification est fonctionnelle !! ")
+    }   
 }

@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
     var str = StringFiles()
-    var expression = Expression()
     var alert = AlertOperator()
     
     var elements: [String] {
@@ -39,6 +38,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.text = str.none
+        NotificationCenter.default.post(name: NSNotification.Name("viewLoaded"), object: nil)
     }
     
     @IBAction func acButton(_ sender: Any) {
