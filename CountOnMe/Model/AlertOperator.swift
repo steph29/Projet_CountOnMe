@@ -9,16 +9,19 @@
 import Foundation
 import UIKit
 
+enum AlertError : Error {
+    case cannotAddOperator
+    case hasNotEnoughElement
+    case expresionIsNotCorrect
+    case expressionHasNoResult
+    
+}
 class AlertOperator {
     // Ne fonctionne pas !!!!!!!
-    var textView = UITextView()
-    var str = StringFiles()
-    var elements: [String] {
-        return textView.text.split(separator: " ").map { "\($0)" }
-    }
-    // Error check computed variables
+    var elements = [String()]
+    
     var expressionIsCorrect: Bool {
-        return elements.last != str.plus && elements.last != str.minus && elements.last != str.division && elements.last != str.multiplication
+        return elements.last != plus && elements.last != minus && elements.last != division && elements.last != multiplication
     }
     
     var expressionHaveEnoughElement: Bool {
@@ -26,18 +29,52 @@ class AlertOperator {
     }
     
     var canAddOperator: Bool {
-        return elements.last != str.plus && elements.last != str.minus && elements.last != str.division && elements.last != str.multiplication
+        return elements.last != plus && elements.last != minus && elements.last != division && elements.last != multiplication
+    }
+    var calcul: String {
+        return elements.joined(separator: " ")
     }
     
-    var expressionHaveResult: Bool {
-        return textView.text.firstIndex(of: "=") != nil
+    func addNumber(_ number: String) {
+        if elements.isEmpty {
+            elements.append(number)
+        } else {
+            var currentNumber = elements.last ?? ""
+            currentNumber.append(number)
+            elements[elements.count-1] = currentNumber
+        }
     }
     
-    init(){
-        NotificationCenter.default.addObserver(self, selector: #selector(calculate), name: NSNotification.Name("viewLoaded"), object: nil)
+    func addOperator (_ op: String) throws{
+        guard canAddOperator else {
+            throw AlertError.cannotAddOperator
+        }
+        elements.append(op)
     }
     
-    @objc private func calculate(){
-        print("La notification est fonctionnelle !! ")
-    }   
+    func computeCalcul() throws {
+        var operationsToReduce = elements
+        guard expressionIsCorrect else {
+            throw AlertError.expresionIsNotCorrect
+        }
+        guard expressionHaveEnoughElement else {
+            throw AlertError.hasNotEnoughElement
+        }
+        while operationsToReduce.count > 1 {
+            let left = Double(operationsToReduce[0])!
+            let operand = operationsToReduce[1]
+            let right = Double(operationsToReduce[2])!
+            var result = Double()
+            switch operand {
+            case plus: result = left + right
+            case minus: result = left - right
+            case multiplication: result = left * right
+            case division: result = left / right
+            default: fatalError(unk)
+            }
+            operationsToReduce = Array(operationsToReduce.dropFirst(3))
+            operationsToReduce.insert("\(result)", at: 0)
+        }
+        elements = operationsToReduce
+    }
 }

@@ -11,25 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
-    var str = StringFiles()
     var alert = AlertOperator()
     
     var elements: [String] {
         return textView.text.split(separator: " ").map { "\($0)" }
     }
-    // Error check computed variables
-    var expressionIsCorrect: Bool {
-        return elements.last != str.plus && elements.last != str.minus && elements.last != str.division && elements.last != str.multiplication
-    }
-    
-    var expressionHaveEnoughElement: Bool {
-        return elements.count >= 3
-    }
-    
-    var canAddOperator: Bool {
-        return elements.last != str.plus && elements.last != str.minus && elements.last != str.division && elements.last != str.multiplication
-    }
-    
+
     var expressionHaveResult: Bool {
         return textView.text.firstIndex(of: "=") != nil
     }
@@ -37,12 +24,11 @@ class ViewController: UIViewController {
     // View Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = str.none
-        NotificationCenter.default.post(name: NSNotification.Name("viewLoaded"), object: nil)
+        textView.text = none
     }
     
     @IBAction func acButton(_ sender: Any) {
-        textView.text = str.none
+        textView.text = none
     }
     // View actions
     @IBAction func tappedNumberButton(_ sender: UIButton) {
@@ -53,7 +39,7 @@ class ViewController: UIViewController {
         if expressionHaveResult {
             textView.text = ""
         }
-        
+        alert.addNumber(numberText)
         textView.text.append(numberText)
     }
     func alertMessageMod(title: String, message: String){
@@ -63,21 +49,26 @@ class ViewController: UIViewController {
     }
     
     func tappedButton(_ sender: UIButton) {
-        if canAddOperator {
+        do {
             switch sender.tag {
             case 1:
-                textView.text.append(" " + str.plus + " ")
+                try alert.addOperator(plus)
             case 2:
-                textView.text.append(" " + str.minus + " ")
+                try alert.addOperator(minus)
             case 3:
-                textView.text.append(" " + str.division + " ")
+                try alert.addOperator(multiplication)
             case 4:
-                textView.text.append(" " + str.multiplication + " ")
+                try alert.addOperator(division)
             default:
                 break
             }
-        } else {
-            alertMessageMod(title: str.zero, message: str.occuped)
+            
+            textView.text = alert.calcul
+        } catch AlertError.cannotAddOperator {
+            alertMessageMod(title: noOperator, message: before)
+        }
+        catch{
+            
         }
     }
     
@@ -92,30 +83,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tappedEqualButton(_ sender: UIButton) {
-        guard expressionIsCorrect else {
-            return alertMessage(title: str.zero, message: str.correct)
+        do {
+            try alert.computeCalcul()
+            textView.text = alert.calcul
+        } catch AlertError.expresionIsNotCorrect {
+            alertMessage(title: oups, message: correct)
+        } catch AlertError.hasNotEnoughElement {
+            alertMessage(title: oups, message: impossible)
+        } catch {
+            
         }
-        guard expressionHaveEnoughElement else {
-            return alertMessage(title: str.oups, message: str.new)
-        }
-        // Create local copy of operations
-        var operationsToReduce = elements
-        // Iterate over operations while an operand still here
-        while operationsToReduce.count > 1 {
-            let left = Double(operationsToReduce[0])!
-            let operand = operationsToReduce[1]
-            let right = Double(operationsToReduce[2])!
-            let result: Double
-            switch operand {
-            case str.plus: result = left + right
-            case str.minus: result = left - right
-            case str.multiplication: result = left * right
-            case str.division: result = left / right
-            default: fatalError(str.unk)
-            }
-            operationsToReduce = Array(operationsToReduce.dropFirst(3))
-            operationsToReduce.insert("\(result)", at: 0)
-        }
-        textView.text.append(" = \(operationsToReduce.first!)")
     }
 }
