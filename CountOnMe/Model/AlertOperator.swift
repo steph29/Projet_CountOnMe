@@ -39,10 +39,17 @@ class AlertOperator {
         if elements.isEmpty {
             elements.append(number)
         } else {
+            if elements.last == plus || elements.last == minus || elements.last == multiplication || elements.last == division {
+                elements.append(number)
+                
+            }
+        
+        else {
             var currentNumber = elements.last ?? ""
             currentNumber.append(number)
             elements[elements.count-1] = currentNumber
         }
+    }
     }
     
     func addOperator (_ op: String) throws{
