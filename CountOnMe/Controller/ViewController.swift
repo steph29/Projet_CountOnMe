@@ -28,19 +28,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func acButton(_ sender: Any) {
-        textView.text = none
+         textView.text = none
+               alert.increaseClic()
+               alert.clearArray()
+               textView.text = alert.calcul
     }
     // View actions
     @IBAction func tappedNumberButton(_ sender: UIButton) {
-        guard let numberText = sender.title(for: .normal) else {
-            return
-        }
-        
-        if expressionHaveResult {
-            textView.text = ""
-        }
-        alert.addNumber(numberText)
-        textView.text.append(numberText)
+         guard let numberText = sender.title(for: .normal) else {
+                      return
+                  }
+                  if expressionHaveResult {
+                      textView.text = ""
+                  }
+                  textView.text.append(numberText)
+                  alert.addNumber(numberText)
+                  textView.text = alert.calcul
     }
     func alertMessageMod(title: String, message: String){
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
